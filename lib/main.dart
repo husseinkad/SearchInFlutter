@@ -81,11 +81,11 @@ class _MyHomePageState extends State<MyHomePage> {
     dummySearchList.addAll(duplicateItems);
     if(query.isNotEmpty) {
       List<String> dummyListData = [];
-      dummySearchList.forEach((item) {
+      for (var item in dummySearchList) {
         if(item.contains(query)) {
           dummyListData.add(item);
         }
-      });
+      }
       setState(() {
         items.clear();
         items.addAll(dummyListData);
@@ -94,7 +94,7 @@ class _MyHomePageState extends State<MyHomePage> {
     } else {
       setState(() {
         items.clear();
-        items.addAll(duplicateItems);
+        const Text('try to search numbers');
       });
     }
   }
